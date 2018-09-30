@@ -18,6 +18,6 @@ Nem funkcionális követelmények:
 - felhasználóbarát, átlátható felület
 
 Szerepkörök:
-User: megtekintheti az adatokat és kereshet bennük
-Könyvtáros: ezen kívül új adatokat  vihet fel, módosíthat, törölhet
-Admin: hozzáadhat/törölhet felhasználókat, módosíthatja a szerepköröket
+- User: megtekintheti az adatokat és kereshet bennük
+- Könyvtáros: ezen kívül új adatokat  vihet fel, módosíthat, törölhet
+- Admin: hozzáadhat/törölhet felhasználókat, módosíthatja a szerepköröket
