@@ -11,5 +11,8 @@ import hu.inf.elte.musiclibrary.model.Text;
 public interface TextRepository extends CrudRepository<Text, Integer> {
 
     @Override
-    public List<Text> findAll();
+    public List<Text> findAll();   
+    public Text findById(int id);
+    public List<Text> findByBeginningIgnoreCaseStartingWithOrderByBeginningAsc(String beginning);
+    public List<Text> findByLangIgnoreCaseStartingWithOrderByBeginningAsc(String lang);
 }

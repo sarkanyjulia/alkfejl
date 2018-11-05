@@ -1,10 +1,12 @@
 package hu.inf.elte.musiclibrary.model;
 
-import lombok.Data;
+//import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
@@ -14,7 +16,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -29,10 +31,20 @@ public class Translation {
     @Column
     private String beginning;  
 
-    @Column
-    private String full_text;      
+    @Column(name = "full_text)")
+    private String fullText;      
 
     @OneToMany(mappedBy = "translation")
     private List<Text> texts;
+
+    
+    public int getId() { return id; }
+    public String getBeginning() { return beginning; }
+    public String getFullText() { return fullText; }
+
+    public void setId(int id) { this.id=id; }
+    public void setBeginning(String beginning) { this.beginning=beginning; }
+    public void setFullText(String fullText) { this.fullText=fullText; }
+    
 
 }

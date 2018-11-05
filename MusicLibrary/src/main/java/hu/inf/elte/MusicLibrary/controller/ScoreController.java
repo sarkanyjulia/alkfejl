@@ -24,12 +24,17 @@ class ScoreController {
         return scoreService.findAll();
     }
 
-    @GetMapping("/byLastName/{lastName}")
-    public List<Score> findByLastName(@PathVariable String lastName) {
-        return scoreService.findByLastName(lastName);
+    @GetMapping("/{id}")
+    public Score findById(@PathVariable int id) {
+        return scoreService.findById(id);
+    }    
+
+    @GetMapping("/name/{name}")
+    public List<Score> findByName(@PathVariable String name) {
+        return scoreService.findByName(name);
     }  
     
-    @GetMapping("/byTitle/{title}")
+    @GetMapping("/title/{title}")
     public List<Score> findByTitle(@PathVariable String title) {
         return scoreService.findByTitle(title);
     }      

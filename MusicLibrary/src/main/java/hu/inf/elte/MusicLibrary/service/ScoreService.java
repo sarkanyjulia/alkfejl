@@ -18,11 +18,15 @@ public class ScoreService {
         return scoreRepository.findAll();
     }
 
-    public List<Score> findByLastName(String lastName) {
-        return scoreRepository.findByLastName(lastName);
+    public Score findById(int id) {
+        return scoreRepository.findById(id);
+    }
+
+    public List<Score> findByName(String name) {
+        return scoreRepository.findByLastNameContainingIgnoreCaseOrderByTitleAsc(name);
     }
 
     public List<Score> findByTitle(String title) {
-        return scoreRepository.findByTitle(title);
+        return scoreRepository.findByTitleContainingIgnoreCaseOrderByTitleAsc(title);
     }
 }

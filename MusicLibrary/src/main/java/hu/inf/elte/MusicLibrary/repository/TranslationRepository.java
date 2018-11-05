@@ -11,5 +11,8 @@ import hu.inf.elte.musiclibrary.model.Translation;
 public interface TranslationRepository extends CrudRepository<Translation, Integer> {
 
     @Override
-    public List<Translation> findAll();
+    public List<Translation> findAll();  
+    public Translation findById(int id);
+    public List<Translation> findByBeginningIgnoreCaseStartsWithOrderByBeginningAsc(String beginning);
+    
 }

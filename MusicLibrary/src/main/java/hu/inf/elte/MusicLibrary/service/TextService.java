@@ -17,4 +17,16 @@ public class TextService {
     public List<Text> findAll() {
         return textRepository.findAll();
     }
+
+    public Text findById(int id) {
+        return textRepository.findById(id);
+    }
+
+    public List<Text> findByBeginning(String begining) {
+        return textRepository.findByBeginningIgnoreCaseStartingWithOrderByBeginningAsc(begining);
+    }
+
+    public List<Text> findByLang(String lang) {
+        return textRepository.findByLangIgnoreCaseStartingWithOrderByBeginningAsc(lang);
+    }
 }

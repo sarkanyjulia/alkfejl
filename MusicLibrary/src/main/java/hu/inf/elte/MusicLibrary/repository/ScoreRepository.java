@@ -13,7 +13,9 @@ public interface ScoreRepository extends CrudRepository<Score, Integer> {
     @Override
     public List<Score> findAll();
 
-    public List<Score> findByLastName(String lastName);
+    public Score findById(int id);
 
-    public List<Score> findByTitle(String title);
+    public List<Score> findByLastNameContainingIgnoreCaseOrderByTitleAsc(String name);
+
+    public List<Score> findByTitleContainingIgnoreCaseOrderByTitleAsc(String title);
 }

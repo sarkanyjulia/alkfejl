@@ -17,4 +17,13 @@ public class TranslationService {
     public List<Translation> findAll() {
         return translationRepository.findAll();
     }
+
+    
+    public Translation findById(int id) {
+        return translationRepository.findById(id);
+    }
+    public List<Translation> findByBeginning(String beginning) {
+        return translationRepository.findByBeginningIgnoreCaseStartsWithOrderByBeginningAsc(beginning);  
+    }  
+    
 }
