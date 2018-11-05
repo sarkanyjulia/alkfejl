@@ -1,4 +1,4 @@
-package hu.inf.elte.MusicLibrary;
+package hu.inf.elte.musiclibrary;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
