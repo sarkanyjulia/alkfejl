@@ -31,7 +31,7 @@ public class Translation {
     @Column
     private String beginning;  
 
-    @Column(name = "full_text)")
+    @Column(name = "full_text")
     private String fullText;      
 
     @OneToMany(mappedBy = "translation")

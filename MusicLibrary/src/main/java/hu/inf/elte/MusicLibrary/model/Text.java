@@ -58,13 +58,13 @@ public class Text {
     public String getBeginning() { return beginning; }
     public String getFullText() { return fullText; }
     public String getAuthor() { return author; }
-    //public Translation getTranslation() { return translation; }
+    public Translation getTranslation() { return translation; }
     
     public void setId(int id) { this.id=id; }
     public void setLang(String lang) { this.lang=lang; }
     public void setBeginning(String beginning) { this.beginning=beginning; }
     public void setFullText(String fullText) { this.fullText=fullText; }
     public void setAuthor(String author) { this.author=author; }
-    //public void setTranslation(Translation translation) { this.translation=translation; }
+    public void setTranslation(Translation translation) { this.translation=translation; }
     
 }
