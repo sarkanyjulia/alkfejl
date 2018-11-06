@@ -29,4 +29,8 @@ public class ScoreService {
     public List<Score> findByTitle(String title) {
         return scoreRepository.findByTitleContainingIgnoreCaseOrderByTitleAsc(title);
     }
+
+    public Score newScore(Score score) {
+        return scoreRepository.save(score);
+    }
 }

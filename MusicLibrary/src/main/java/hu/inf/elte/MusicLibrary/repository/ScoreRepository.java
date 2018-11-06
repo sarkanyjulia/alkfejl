@@ -12,10 +12,9 @@ public interface ScoreRepository extends CrudRepository<Score, Integer> {
 
     @Override
     public List<Score> findAll();
-
     public Score findById(int id);
-
     public List<Score> findByLastNameContainingIgnoreCaseOrderByTitleAsc(String name);
-
     public List<Score> findByTitleContainingIgnoreCaseOrderByTitleAsc(String title);
+
+    public Score save(Score score);
 }

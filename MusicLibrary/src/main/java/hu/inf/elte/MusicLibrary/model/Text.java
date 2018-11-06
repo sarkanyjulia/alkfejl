@@ -45,7 +45,6 @@ public class Text {
     
     @ManyToOne
     @JoinColumn
-    @JsonIgnore
     private Translation translation;
 
     @ManyToMany(mappedBy = "texts")
