@@ -15,7 +15,7 @@ public class ScoreService {
     private ScoreRepository scoreRepository;
 
     public List<Score> findAll() {
-        return scoreRepository.findAll();
+        return scoreRepository.findAllByOrderByLastNameAscFirstNameAscTitleAsc();
     }
 
     public Score findById(int id) {
@@ -23,11 +23,11 @@ public class ScoreService {
     }
 
     public List<Score> findByName(String name) {
-        return scoreRepository.findByLastNameContainingIgnoreCaseOrderByTitleAsc(name);
+        return scoreRepository.findByLastNameContainingIgnoreCaseOrderByFirstNameAscTitleAsc(name);
     }
 
     public List<Score> findByTitle(String title) {
-        return scoreRepository.findByTitleContainingIgnoreCaseOrderByTitleAsc(title);
+        return scoreRepository.findByTitleContainingIgnoreCaseOrderByTitleAscLastNameAscFirstNameAsc(title);
     }
 
     public Score newScore(Score score) {

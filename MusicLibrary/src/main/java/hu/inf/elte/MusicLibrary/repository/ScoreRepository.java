@@ -10,11 +10,11 @@ import hu.inf.elte.musiclibrary.model.Score;
 @Repository
 public interface ScoreRepository extends CrudRepository<Score, Integer> {
 
-    @Override
-    public List<Score> findAll();
+    //@Override
+    public List<Score> findAllByOrderByLastNameAscFirstNameAscTitleAsc();
     public Score findById(int id);
-    public List<Score> findByLastNameContainingIgnoreCaseOrderByTitleAsc(String name);
-    public List<Score> findByTitleContainingIgnoreCaseOrderByTitleAsc(String title);
+    public List<Score> findByLastNameContainingIgnoreCaseOrderByFirstNameAscTitleAsc(String name);
+    public List<Score> findByTitleContainingIgnoreCaseOrderByTitleAscLastNameAscFirstNameAsc(String title);
 
     public Score save(Score score);
 }
