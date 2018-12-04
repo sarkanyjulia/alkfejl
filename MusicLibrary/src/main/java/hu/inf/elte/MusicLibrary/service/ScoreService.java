@@ -1,6 +1,7 @@
 package hu.inf.elte.musiclibrary.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class ScoreService {
         return scoreRepository.findAllByOrderByLastNameAscFirstNameAscTitleAsc();
     }
 
-    public Score findById(int id) {
+    public Optional<Score> findById(int id) {
         return scoreRepository.findById(id);
     }
 
@@ -30,7 +31,11 @@ public class ScoreService {
         return scoreRepository.findByTitleContainingIgnoreCaseOrderByTitleAscLastNameAscFirstNameAsc(title);
     }
 
-    public Score newScore(Score score) {
+    public Score save(Score score) {
         return scoreRepository.save(score);
     }
+
+	public void delete(Score score) {
+        scoreRepository.delete(score);
+	}
 }

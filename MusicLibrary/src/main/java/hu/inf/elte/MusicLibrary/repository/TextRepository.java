@@ -1,6 +1,7 @@
 package hu.inf.elte.musiclibrary.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
@@ -12,7 +13,7 @@ public interface TextRepository extends CrudRepository<Text, Integer> {
 
     @Override
     public List<Text> findAll();   
-    public Text findById(int id);
+    public Optional<Text> findById(int id);
     public List<Text> findByBeginningIgnoreCaseStartingWithOrderByBeginningAsc(String beginning);
     public List<Text> findByLangIgnoreCaseStartingWithOrderByBeginningAsc(String lang);
 }

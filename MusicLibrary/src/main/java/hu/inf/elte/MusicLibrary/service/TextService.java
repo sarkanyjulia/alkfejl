@@ -1,6 +1,7 @@
 package hu.inf.elte.musiclibrary.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class TextService {
         return textRepository.findAll();
     }
 
-    public Text findById(int id) {
+    public Optional<Text> findById(int id) {
         return textRepository.findById(id);
     }
 
@@ -29,4 +30,12 @@ public class TextService {
     public List<Text> findByLang(String lang) {
         return textRepository.findByLangIgnoreCaseStartingWithOrderByBeginningAsc(lang);
     }
+
+	public Text save(Text text) {
+		return textRepository.save(text);
+	}
+
+	public void delete(Text text) {
+        textRepository.delete(text);
+	}
 }
