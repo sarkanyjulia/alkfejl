@@ -28,7 +28,7 @@ import javax.persistence.Column;
 public class Text {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
     @Column

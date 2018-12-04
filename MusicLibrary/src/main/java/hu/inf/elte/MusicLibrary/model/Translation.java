@@ -25,7 +25,7 @@ import javax.persistence.Column;
 public class Translation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
     @Column
