@@ -1,10 +1,12 @@
-Alkalmazások fejlesztése tantárgy beadandó
+# Alkalmazások fejlesztése tantárgy beadandó
 
-Projekt rövid leírása:
+## 1. Követelményelemzés
+
+### 1.1. Projekt rövid leírása
 
 A program egy kórus által használt kották nyilvántartását végzi. Minden műhöz rögzíteni kell annak szerzőjét, címét, és a kottatári helyét. A kórusvezető számára fontos lehet, hogy szöveg szerint is tudjon műveket válogatni, valamint könnyen elérje az idegen szövegű művek fordítását, ezért nyilvántartjuk a szövegeket, fordításokat is. Egy műhöz több szöveg is tartozhat (pl. több tételes műveknél), és egy adott szövegre több kórusmű is létezhet.
 
-Funkcionális követelmények:
+### 1.2. Funkcionális követelmények
 - bejelentkezés, kijelentkezés
 - kotta felvitele / módosítása / törlése
 - szöveg felvitele / módosítása / törlése
@@ -14,17 +16,17 @@ Funkcionális követelmények:
 - kotta keresése cím, szerző szöveg alapján, összes listázása
 - szöveg keresése cím, nyelv alapján, összes listázása
 
-Nem funkcionális követelmények:
+### 1.3. Nem funkcionális követelmények:
 - felhasználóbarát, átlátható felület
 
-Szerepkörök:
+### 1.4. Szerepkörök:
 - User: megtekintheti az adatokat és kereshet bennük
 - Könyvtáros: ezen kívül új adatokat  vihet fel, módosíthat, törölhet
 - Admin: módosíthatja a felhasználók szerepkörét
 
-Tervezés
+## 2. Tervezés
 
-Végpontok
+### 2.1. Végpontok
 
 - GET /score: összes kotta listázása
 - GET /score/{id}: kotta keresése azonosító szerint
@@ -49,6 +51,7 @@ Végpontok
 - PUT /translation/{id}: adott azonosítójú fordítás módosítása
 - DELETE /translation/{id}: adott azonosítójú fordítás törlése
 
-Adatbázis terv
+### 2.2. Adatbázis terv
+
 ![ER diagram](/images/database.png)
 
