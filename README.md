@@ -20,8 +20,8 @@ A program egy kórus által használt kották nyilvántartását végzi. Minden 
 - felhasználóbarát, átlátható felület
 
 ### 1.4. Szerepkörök:
-- User: megtekintheti az adatokat és kereshet bennük
-- Könyvtáros: ezen kívül új adatokat  vihet fel, módosíthat, törölhet
+- Vendég: megtekintheti az adatokat és kereshet bennük
+- Könyvtáros (user): ezen kívül új adatokat  vihet fel, módosíthat, törölhet
 - Admin: módosíthatja a felhasználók szerepkörét
 
 ## 2. Tervezés
