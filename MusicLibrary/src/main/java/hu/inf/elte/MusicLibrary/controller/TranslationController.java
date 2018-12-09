@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 
 import hu.inf.elte.musiclibrary.service.TranslationService;
 import hu.inf.elte.musiclibrary.model.Translation;
@@ -51,12 +52,14 @@ class TranslationController {
     }
 
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @PostMapping("")
     public ResponseEntity<Translation> save(@RequestBody Translation translation) {
         return ResponseEntity.ok(translationService.save(translation));
     }
 
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @PutMapping("/{id}")
     public ResponseEntity<Object> update(@RequestBody Translation translation, @PathVariable("id") int id) {
         Optional<Translation> optionalTranslation = translationService.findById(id);
@@ -70,6 +73,7 @@ class TranslationController {
     }
 
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @DeleteMapping("/{id}")
     public ResponseEntity<Translation> update(@PathVariable("id") int id) {
         Optional<Translation> optionalTranslation = translationService.findById(id);

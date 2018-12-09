@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import hu.inf.elte.musiclibrary.AuthenticatedUser;
@@ -63,12 +63,14 @@ class ScoreController {
     }  
     
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @PostMapping("")
     public ResponseEntity<Score> save(@RequestBody Score score) {
         return ResponseEntity.ok(scoreService.save(score));
     }
 
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @PutMapping("/{id}")
     public ResponseEntity<Score> update(@RequestBody Score score, @PathVariable("id") int id) {
         Optional<Score> optionalScore = scoreService.findById(id);
@@ -82,6 +84,7 @@ class ScoreController {
     }
 
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @DeleteMapping("/{id}")
     public ResponseEntity<Score> update(@PathVariable("id") int id) {
         Optional<Score> optionalScore = scoreService.findById(id);

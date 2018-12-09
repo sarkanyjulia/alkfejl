@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 
 import hu.inf.elte.musiclibrary.service.TextService;
 import hu.inf.elte.musiclibrary.model.Text;
@@ -57,12 +58,14 @@ class TextController {
     }
 
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @PostMapping("")
     public ResponseEntity<Text> save(@RequestBody Text text) {
         return ResponseEntity.ok(textService.save(text));
     }
 
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @PutMapping("/{id}")
     public ResponseEntity<Text> update(@RequestBody Text text, @PathVariable("id") int id) {
         Optional<Text> optionalText = textService.findById(id);
@@ -76,6 +79,7 @@ class TextController {
     }
 
     @CrossOrigin
+    @Secured({ "ROLE_USER", "ROLE_ADMIN" })
     @DeleteMapping("/{id}")
     public ResponseEntity<Text> update(@PathVariable("id") int id) {
         Optional<Text> optionalText = textService.findById(id);
