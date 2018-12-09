@@ -50,5 +50,5 @@ Végpontok
 - DELETE /translation/{id}: adott azonosítójú fordítás törlése
 
 Adatbázis terv
-![ER diagram](/url "/images/database.png")
+![ER diagram](/images/database.png)
 
