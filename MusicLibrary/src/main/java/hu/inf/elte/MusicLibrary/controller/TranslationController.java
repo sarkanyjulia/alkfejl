@@ -85,5 +85,4 @@ class TranslationController {
             return ResponseEntity.notFound().build();
         }        
     }    
-
 }
