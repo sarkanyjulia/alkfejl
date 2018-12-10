@@ -37,5 +37,5 @@ public class ScoreService {
 
 	public void delete(Score score) {
         scoreRepository.delete(score);
-	}
+    }
 }

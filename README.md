@@ -51,6 +51,10 @@ A program egy kórus által használt kották nyilvántartását végzi. Minden 
 - PUT /translation/{id}: adott azonosítójú fordítás módosítása
 - DELETE /translation/{id}: adott azonosítójú fordítás törlése
 
+- GET /user: felhasználók listázása
+- PUT /user/{id}: felhasználó módosítása
+- DELETE /user/{id}: felhasználó törlése
+
 - POST /user: új felhasználó regisztrálása
 - POST /user/sign-in: bejelentkezés
 
