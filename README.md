@@ -22,7 +22,7 @@ A program egy kórus által használt kották nyilvántartását végzi. Minden 
 ### 1.4. Szerepkörök:
 - Vendég: megtekintheti az adatokat és kereshet bennük
 - Könyvtáros (user): ezen kívül új adatokat  vihet fel, módosíthat, törölhet
-- Admin: módosíthatja vagy törölheti a felhasználókat
+- Admin: ezen kívül módosíthatja vagy törölheti a felhasználókat
 
 ## 2. Tervezés
 
