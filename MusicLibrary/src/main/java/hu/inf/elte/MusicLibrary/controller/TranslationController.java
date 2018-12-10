@@ -28,7 +28,7 @@ class TranslationController {
     private TranslationService translationService;
 
     @CrossOrigin
-    @GetMapping("/all")
+    @GetMapping("")
     public ResponseEntity<List<Translation>> all() {
         return ResponseEntity.ok(translationService.findAll());
     }
