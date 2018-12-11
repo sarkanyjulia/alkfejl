@@ -48,12 +48,15 @@ public class Score {
     public String getLastName() { return lastName; }
     public String getTitle() { return title; }
     public String getPlace() { return place; }
+    public List<Text> getTexts() { return texts; }
 
     public void setId(int id) { this.id = id; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
     public void setTitle(String title) { this.title = title; }
     public void setPlace(String place) { this.place = place; }
+    public void setTexts(List<Text> texts) { this.texts = texts; }
+
 
 
 
