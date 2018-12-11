@@ -35,7 +35,7 @@ public class UserController {
     private BCryptPasswordEncoder passwordEncoder;
     
     @CrossOrigin
-    @PostMapping("")
+    @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
         Optional<User> optionalUser = userRepository.findByUsername(user.getUsername());
 
