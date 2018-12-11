@@ -48,7 +48,7 @@ public class Text {
     private Translation translation;
 
     @ManyToMany(mappedBy = "texts")
-    @JsonIgnore
+    //@JsonIgnore
     private List<Score> scores;   
     
     
