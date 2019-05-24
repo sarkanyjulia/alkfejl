@@ -9,18 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-//import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-//@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "users")
 public class User {
-
-    @Id
+   
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
@@ -37,6 +31,20 @@ public class User {
     public enum Role {
         ROLE_GUEST, ROLE_USER, ROLE_ADMIN
     }
+    
+    
+    
+    public User() {
+		super();
+	}
+
+	public User(int id, String username, String password, Role role) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
 
     public int getId() { return id; }
     public String getUsername() { return username; }

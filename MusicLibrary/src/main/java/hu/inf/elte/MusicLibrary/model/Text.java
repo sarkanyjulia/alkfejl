@@ -20,8 +20,8 @@ import java.util.List;
 import javax.persistence.Column;
 
 //@Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 @Table(name = "texts")
 
@@ -52,12 +52,29 @@ public class Text {
     private List<Score> scores;   
     
     
-    public int getId() { return id; }
+    public Text() {
+		super();
+	}
+
+	public Text(int id, String lang, String beginning, String fullText, String author, Translation translation,
+			List<Score> scores) {
+		super();
+		this.id = id;
+		this.lang = lang;
+		this.beginning = beginning;
+		this.fullText = fullText;
+		this.author = author;
+		this.translation = translation;
+		this.scores = scores;
+	}
+    
+	public int getId() { return id; }
     public String getLang() { return lang; }
     public String getBeginning() { return beginning; }
     public String getFullText() { return fullText; }
     public String getAuthor() { return author; }
     public Translation getTranslation() { return translation; }
+    public List<Score> getScores() { return scores; }
     
     public void setId(int id) { this.id=id; }
     public void setLang(String lang) { this.lang=lang; }
@@ -65,5 +82,5 @@ public class Text {
     public void setFullText(String fullText) { this.fullText=fullText; }
     public void setAuthor(String author) { this.author=author; }
     public void setTranslation(Translation translation) { this.translation=translation; }
-    
+    public void setScores(List<Score> scores) { this.scores = scores; }
 }

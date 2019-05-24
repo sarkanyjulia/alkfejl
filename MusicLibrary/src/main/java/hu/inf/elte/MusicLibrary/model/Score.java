@@ -1,8 +1,8 @@
 package hu.inf.elte.musiclibrary.model;
 
 //import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+//import lombok.AllArgsConstructor;
+//import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -16,8 +16,8 @@ import javax.persistence.Column;
 import java.util.List;
 
 //@Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 @Table(name = "scores")
 
@@ -43,7 +43,21 @@ public class Score {
     @JoinTable
     private List<Text> texts;    
 
-    public int getId() { return id; }
+    public Score() {
+		super();
+	}
+    
+	public Score(int id, String firstName, String lastName, String title, String place, List<Text> texts) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.title = title;
+		this.place = place;
+		this.texts = texts;
+	}
+
+	public int getId() { return id; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getTitle() { return title; }
