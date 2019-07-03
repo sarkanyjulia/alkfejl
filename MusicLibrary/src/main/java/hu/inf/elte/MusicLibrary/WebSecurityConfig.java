@@ -28,10 +28,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .csrf()
                 .disable() // H2 Console
             .authorizeRequests()
-                .antMatchers("/h2/**", "/api/user")
+                .antMatchers("/h2/**")
                     .permitAll() // H2 Console
                 .anyRequest()
-                    .authenticated()              
+                    //.authenticated()  
+                	.permitAll()
+                	.and()
+             .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .and()
+            .logout()
+                .permitAll()         
                 .and()
             .httpBasic()
                 .and()
@@ -54,11 +62,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         auth.userDetailsService(userDetailsService)
             .passwordEncoder(passwordEncoder());
-
-        /*auth.inMemoryAuthentication()
-            .withUser("user")
-            .password("$2a$10$b2KUBuo5r0ReQqTOEFttkeIvx2PnBxariDTDxRK/Y9Xpui2/tMHs2")
-            .roles("USER");*/
+            
+//        auth.inMemoryAuthentication()
+//            .withUser("admin")
+//            .password("$2a$10$b2KUBuo5r0ReQqTOEFttkeIvx2PnBxariDTDxRK/Y9Xpui2/tMHs2")
+//            .roles("ADMIN");
     }
 
     @Bean

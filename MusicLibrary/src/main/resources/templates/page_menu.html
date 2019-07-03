@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Kottatár</title>
+</head>
+
+<header th:fragment="menu">                      
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link navbar-brand" href="#" th:href="@{/}">Kottatár</a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/score/new}">Új kotta</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" th:href="@{/texts}">Szövegek</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" th:href="@{/users}">Felhasználók</a>
+          </li>
+        </ul>  
+        <ul class="navbar-nav ml-auto">    
+            <li class="nav-item">            
+                <button id="logout" class="btn btn-sm btn-outline-secondary" type="button">Kijelentkezés</button>        
+            </li>
+        </ul>  
+    </nav> 
+</header>
+
+<body>
+</body>
+
+</html>

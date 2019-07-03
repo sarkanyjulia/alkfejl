@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="score.css" rel="stylesheet">
+    <title>Kottatár</title>
+</head>
+
+<header th:replace="page_menu :: menu">                      
+</header>
+
+<body>
+    <div class="card" id= "score">
+        <div class="card-header">
+            <h1 class="h2">      	
+            	<span th:text="${selectedScore.title}" th:remove="tag">Magnificat</span>
+                <br/>
+                <small class="text-muted" th:text="${selectedScore.lastName} + ', ' + ${selectedScore.firstName}">Bach, Johann Sebastian</small>
+            </h1>
+        </div>
+        <div class="card-body">     
+          <div class="card-text">
+            <p th:text="'Kottatári hely: ' + ${selectedScore.place}">Kottatári hely: b1</p>
+            
+          </div>      
+            
+            <div class="card texts-card" th:if="${not #lists.isEmpty(selectedScore.texts)}">
+            <h2 class="h6 card-header">Szöveg</h2>
+            <ul class="list-group">
+                <li class="list-group-item" th:each="text : ${selectedScore.texts}">
+                  <h3 class="h5" th:text="${text.beginning}">Magnificat anima mea Dominum</h3>
+                  <p>
+                  <span th:text="|Nyelv: ${text.lang}|" th:remove="tag">Nyelv: latin</span>
+                  <br/>
+                  <span th:text="|Szerző: ${text.author}|" th:remove="tag">Szerző: Lukács evangéliuma</span>
+                  </p>
+
+                  <div class="card single-text" th:text="${text.fullText}">
+                    Magnificat anima mea dominum,<br/>
+                    et exsultavit spiritus meus in Deo salutari meo.<br/>
+                    Quia respexit humilitatem ancillae suae,<br/>
+                    ecce enim ec hox beatam me dicent omnes generationes.
+                  </div>
+                  <!--  
+                  <div class="card single-text" th:if="${text.translation != null}" th:text="${text.translation.fullText}">
+                      Magasztalja az én lelkem az Urat,<br/>
+                      és ujjong az én lelkem üdvözítő Istenemben.<br/>
+                      Mert tekintetre méltatta alázatos szolgálóleányát,<br/>
+                      íme, mostantól fogva boldognak mondanak engem minden nemzetek.
+                    </div>
+                    -->
+                </li>               
+             <!--  
+                  <li class="list-group-item">
+                    <h3 class="h5">Magnificat anima mea Dominum</h3>
+                    <p>Nyelv: latin<br/>
+                    Szerző: Lukács evangéliuma</p>
+  
+                    <div class="card single-text">
+                        Magnificat anima mea dominum,<br/>
+                        et exsultavit spiritus meus in Deo salutari meo.<br/>
+                        Quia respexit humilitatem ancillae suae,<br/>
+                        ecce enim ec hox beatam me dicent omnes generationes.
+                    </div>
+                    
+                  </li>      
+                  -->
+                           
+                </ul>
+              </div>
+        </div>
+    </div>
+  
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+</body>
+</html>

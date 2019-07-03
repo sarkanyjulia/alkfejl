@@ -3,6 +3,8 @@ package hu.inf.elte.musiclibrary.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
@@ -28,6 +30,7 @@ public class Translation {
 	private String fullText;
 
 	@OneToMany(mappedBy = "translation")
+	@JsonIgnore
 	private List<Text> texts;
 
 	public Translation() {

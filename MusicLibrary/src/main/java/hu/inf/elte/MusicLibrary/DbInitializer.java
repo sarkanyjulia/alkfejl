@@ -105,7 +105,9 @@ public class DbInitializer implements ApplicationListener<ApplicationReadyEvent>
 		scoreRepository.save(new Score(4, "Johann Sebastian", "Bach", "Magnificat", "b1", textsToAdd));
 		LOGGER.info("score saved");
 		
-		scoreRepository.save(new Score(5, "Zoltán", "Kodály", "Öregek", "j2", null));
+		textsToAdd = new ArrayList<>();
+		textsToAdd.add(textRepository.findById(3).orElse(null));
+		scoreRepository.save(new Score(5, "Zoltán", "Kodály", "Öregek", "j2", textsToAdd));
 		LOGGER.info("score saved");
 		
 		textsToAdd = new ArrayList<>();
