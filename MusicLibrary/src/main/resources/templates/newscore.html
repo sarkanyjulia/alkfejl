@@ -13,15 +13,15 @@
 <header th:replace="page_menu :: menu">                      
 </header>
 
-<body>   
-    <form id="score-form" action="#" th:action="@{/score/save}" th:object="${newScore}" method="post">
-        <legend>Új kotta felvétele</legend>
+<body>   	
+    <form id="score-form" action="#" th:action="@{${route}}" th:object="${newScore}" method="post"> 
+    	<legend th:text="${legend}">Új kotta felvétele</legend>       
         <div class="form-group row">
             <div class="col-1">
                 <label for="inputTitle">Cím:</label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control" id="inputTitle" placeholder="Cím" required th:field="*{newScore.title}">
+                <input type="text" class="form-control" id="inputTitle" placeholder="Cím" required th:field="*{title}">
             </div>
                      
         </div>
@@ -31,11 +31,11 @@
             </div>
             <div class="col-4">
                 <label for="inputLastName" class="sr-only">Vezetéknév</label>
-                <input type="text" class="form-control" id="inputLastName" placeholder="Vezetéknév" required th:field="*{newScore.lastName}> 
+                <input type="text" class="form-control" id="inputLastName" placeholder="Vezetéknév" required th:field="*{lastName}"> 
             </div>
             <div class="col-4">
                 <label for="inputFirstName" class="sr-only">Keresztnév</label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="Keresztnév" th:field="*{newScore.firstName}>  
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Keresztnév" th:field="*{firstName}">  
             </div>    
         </div>
         <div class="form-group row">
@@ -43,7 +43,7 @@
                     <label for="inputPlace">Hely:</label>
             </div>
             <div class="col-4">
-                    <input type="text" class="form-control" id="inputPlace" placeholder="Kottatári hely" th:field="*{newScore.place}>
+                    <input type="text" class="form-control" id="inputPlace" placeholder="Kottatári hely" th:field="*{place}">
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Mentés</button>

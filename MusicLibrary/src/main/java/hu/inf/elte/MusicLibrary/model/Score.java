@@ -25,7 +25,7 @@ public class Score {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     
     @Column(name = "composer_fname")
     private String firstName;    
@@ -47,7 +47,7 @@ public class Score {
 		super();
 	}
     
-	public Score(int id, String firstName, String lastName, String title, String place, List<Text> texts) {
+	public Score(Integer id, String firstName, String lastName, String title, String place, List<Text> texts) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -57,14 +57,14 @@ public class Score {
 		this.texts = texts;
 	}
 
-	public int getId() { return id; }
+	public Integer getId() { return id; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getTitle() { return title; }
     public String getPlace() { return place; }
     public List<Text> getTexts() { return texts; }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(Integer id) { this.id = id; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
     public void setTitle(String title) { this.title = title; }

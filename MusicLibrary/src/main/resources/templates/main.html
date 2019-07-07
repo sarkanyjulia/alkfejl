@@ -29,6 +29,7 @@
                 <td th:text="${score.title}">Magnificat</td>
                 <td th:text="${score.place}">b1</td>
                 <td><a href="#" th:href="@{/score(scoreId=${score.id})}">Részletek</a></td>
+                <td><a href="#" th:href="@{/score/edit(scoreId=${score.id})}">Szerkesztés</a></td>
                 <td><a href="#" th:href="@{/score/delete(scoreId=${score.id})}">Törlés</a></td>
             </tr>            
         </tbody>
