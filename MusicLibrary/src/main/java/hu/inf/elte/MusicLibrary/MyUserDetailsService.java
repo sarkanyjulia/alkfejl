@@ -3,6 +3,7 @@ package hu.inf.elte.musiclibrary;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,6 +18,8 @@ import hu.inf.elte.musiclibrary.repository.UserRepository;
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {
+	
+	private static final Logger LOGGER = Logger.getLogger("MyUserDetailService");
 
     @Autowired
     private UserRepository userRepository;
@@ -26,6 +29,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    	LOGGER.info("loadUserByUsername() called with param '" + username + "'");
         Optional<User> optionalUser = userRepository.findByUsername(username);
         
         if (!optionalUser.isPresent()) {

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import hu.inf.elte.musiclibrary.data.ScoreFormData;
+import hu.inf.elte.musiclibrary.data.TextFormData;
 import hu.inf.elte.musiclibrary.model.Score;
 import hu.inf.elte.musiclibrary.model.Text;
 import hu.inf.elte.musiclibrary.service.ScoreService;
@@ -48,7 +49,7 @@ public class ScoresController {
 	@GetMapping("/score/new")
 	public String newScore(Model model) {
 		model.addAttribute("newScore", new ScoreFormData());
-		model.addAttribute("legend", "Új kotta felvétele");
+		model.addAttribute("pageTitle", "Új kotta felvétele");
 		model.addAttribute("route", "/score/save");
 		return "newscore";
 	}
@@ -62,8 +63,22 @@ public class ScoresController {
 		scoreData.setFirstName(score.getFirstName());
 		scoreData.setLastName(score.getLastName());
 		scoreData.setPlace(score.getPlace());
+//		for (Text text : score.getTexts()) {
+//			TextFormData textData = new TextFormData();
+//			textData.setId(text.getId());
+//			textData.setLang(text.getLang());
+//			textData.setAuthor(text.getAuthor());
+//			textData.setBeginning(text.getBeginning());
+//			textData.setFullText(text.getFullText());
+//			if (text.getTranslation()!=null) {
+//				textData.setTranslationId(text.getTranslation().getId());
+//				textData.setTranslationBeginning(text.getTranslation().getBeginning());
+//				textData.setTranslationFullText(text.getTranslation().getFullText());
+//			}	
+//			scoreData.addText(textData);
+//		}
 		model.addAttribute("newScore", scoreData);
-		model.addAttribute("legend", "Kotta adatainak szerkesztése");
+		model.addAttribute("pageTitle", "Kotta adatainak szerkesztése");
 		model.addAttribute("route", "/score/update/" + scoreId);
 		return "newscore";
 	}

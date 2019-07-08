@@ -1,9 +1,7 @@
 package hu.inf.elte.musiclibrary.data;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScoreFormData {	
 	  
@@ -12,6 +10,8 @@ public class ScoreFormData {
 	private String lastName;  	    
 	private String title;      
 	private String place;
+	private List<TextFormData> texts = new ArrayList<>();
+	
 	public Integer getId() {
 		return id;
 	}
@@ -43,5 +43,15 @@ public class ScoreFormData {
 		this.place = place;
 	} 
 
+	public List<TextFormData> getTexts() {
+		return texts;
+	}
+	public void addText(TextFormData text) {
+		texts.add(text);
+	}
+	
+	public void removeText(int index) {
+		texts.remove(index);
+	}
 	
 }

@@ -28,18 +28,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .csrf()
                 .disable() // H2 Console
             .authorizeRequests()
-                .antMatchers("/h2/**")
-                    .permitAll() // H2 Console
+                .antMatchers("/h2/**", "/login.css")
+                    .permitAll() // H2 Console                
                 .anyRequest()
-                    //.authenticated()  
-                	.permitAll()
+                    .authenticated()  
+                	//.permitAll()
                 	.and()
              .formLogin()
-                .loginPage("/login")
+                .loginPage("/login").usernameParameter("username").passwordParameter("password")
+                .defaultSuccessUrl("/")
                 .permitAll()
                 .and()
             .logout()
-                .permitAll()         
+            	.logoutSuccessUrl("/login")    
                 .and()
             .httpBasic()
                 .and()
@@ -53,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/api/user/register", "/api/user/sign-in");
+        web.ignoring().antMatchers("/api/user/register", "/api/user/sign-in");   	
     }
 
     @Autowired
@@ -65,7 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             
 //        auth.inMemoryAuthentication()
 //            .withUser("admin")
-//            .password("$2a$10$b2KUBuo5r0ReQqTOEFttkeIvx2PnBxariDTDxRK/Y9Xpui2/tMHs2")
+//            .password(passwordEncoder().encode("password"))
 //            .roles("ADMIN");
     }
 

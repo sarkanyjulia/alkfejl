@@ -13,9 +13,10 @@
 <header th:replace="page_menu :: menu">                      
 </header>
 
-<body>   	
+<body>   
+	<h1 th:text="${pageTitle}">Cím</h1>
     <form id="score-form" action="#" th:action="@{${route}}" th:object="${newScore}" method="post"> 
-    	<legend th:text="${legend}">Új kotta felvétele</legend>       
+    	<legend >Kotta</legend>       
         <div class="form-group row">
             <div class="col-1">
                 <label for="inputTitle">Cím:</label>
@@ -46,6 +47,31 @@
                     <input type="text" class="form-control" id="inputPlace" placeholder="Kottatári hely" th:field="*{place}">
             </div>
         </div>
+<!--  
+        <h2>Szövegek kezelése</h2>
+        <div class="table-responsive">     
+	        <table class="table" th:if="${not #lists.isEmpty(newScore.texts)}">	        	
+	        	<thead>
+	        		<tr>
+	        			<th>Nyelv</th>
+	        			<th>Szerző</th>
+	        			<th>Szöveg></th>
+	        			<th>Fordítás</th>
+	        			<th />
+	        		</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr th:each="text : *{texts}">
+	        			<td th:text="${text.lang}">nyelv</td>
+	        			<td th:text="${text.author}">szerző</td>
+	        			<td th:text="${text.beginning}">szöveg</td>
+	        			<td th:text="${text.translation.beginning}">fordítás</td>
+	        			<td><a href="#">Eltávolít</a></td>
+	        		</tr>
+	        	</tbody>
+	        </table>
+        </div>
+-->
         <button type="submit" class="btn btn-primary">Mentés</button>
     </form>
 
