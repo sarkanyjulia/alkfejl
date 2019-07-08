@@ -15,9 +15,9 @@
    <form class="form-signin" th:action="@{/login}" method="post">
         <h1 class="h3 mb-3 font-weight-normal">Kottatár - bejelentkezés</h1>
         <label for="username" class="sr-only">Felhasználónév</label>
-        <input type="text" id="username" class="form-control" placeholder="Felhasználónév" required autofocus>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Felhasználónév" required autofocus>
         <label for="password" class="sr-only">Jelszó</label>
-        <input type="password" id="password" class="form-control" placeholder="Jelszó" required>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Jelszó" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Bejelentkezés</button>
    </form>
 
